@@ -1,0 +1,15 @@
+[ {
+  "name" : "Іван",
+  "surname" : "Іванов",
+  "patronimic" : "Іванович",
+  "diagnosis" : null,
+  "id" : 0,
+  "medicalCard" : 0
+}, {
+  "name" : "s",
+  "surname" : "a",
+  "patronimic" : "d",
+  "diagnosis" : null,
+  "id" : 1,
+  "medicalCard" : 1
+} ]
