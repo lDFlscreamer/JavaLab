@@ -14,7 +14,7 @@ public class FileSerView implements FileInputInterface ,FileOutInterface {
 
     public FileSerView(String path,String fileName) throws IOException{
 
-        ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(path + "\\" + fileName));
+        ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(path + "\\" + fileName,true));
         this.out = outputStream;
         FileInputStream fiStream = new FileInputStream(path + "\\" + fileName);
         ObjectInputStream objectStream = new ObjectInputStream(fiStream);

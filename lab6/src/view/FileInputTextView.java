@@ -17,7 +17,7 @@ public class FileInputTextView implements FileInputInterface ,FileOutInterface{
 
         this.dataOutputStream = new DataOutputStream(
                                                 new BufferedOutputStream(
-                                                        new FileOutputStream(path + "\\" + fileName)));
+                                                        new FileOutputStream(path + "\\" + fileName,true)));
        this.dataInputStream = new DataInputStream(
                                                 new BufferedInputStream(
                                                         new FileInputStream(path + "\\" + fileName)));

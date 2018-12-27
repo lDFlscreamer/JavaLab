@@ -46,12 +46,12 @@ public class Controler3  {
             Console.out("1.Output  patient ");
             Console.out("2.search by diagnosisi");
             Console.out("3.filter by Medical Card");
-            Console.out("4.input from File");
-            Console.out("5.out to File");
-            Console.out("6.input from txtFile");
-            Console.out("7.out to txtFile");
-            Console.out("8.out to JsonFile");
-            Console.out("9.input to JsonFile");
+            Console.out("4.read from File");
+            Console.out("5.input to File");
+            Console.out("6.read from txtFile");
+            Console.out("7.input to txtFile");
+            Console.out("8.input to JsonFile");
+            Console.out("9.read to JsonFile");
             Console.out("10.exit");
 
 
@@ -129,8 +129,12 @@ public class Controler3  {
        while((temp=this.serializ.readNextPatient())!=null){
 
            result.add(temp);
+           Console.out(temp);
        }}
-       catch(Exception e){}
+       catch(IOException e){
+           System.out.println(e.getCause());
+
+       }
        finally {
            return result;
        }
@@ -153,7 +157,7 @@ public class Controler3  {
     }
 
     private void outTxt (ArrayList<Patient> forOut) throws IOException
-    {  this.txtF.startStreamToOutFile("");
+    {
         try {
             for (Patient p : forOut) {
 
@@ -161,6 +165,7 @@ public class Controler3  {
 
 
             }
+            this.txtF.closeOutStreame();
         }
         catch (NullPointerException e){
             System.out.println(e.getCause());
@@ -208,6 +213,7 @@ public class Controler3  {
             this.serializ.writeNextPatient(p);
 
         }
+        this.serializ.closeOutStreame();
 
     }
 }
